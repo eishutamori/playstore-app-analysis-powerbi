@@ -2,41 +2,47 @@
 
 ## Project Overview
 
-This project analyzes Google Play Store application data using Microsoft Power BI to understand app performance, user engagement, ratings, reviews, installs, pricing, content ratings, and user sentiment.
+This project is a Power BI-based analysis of Google Play Store applications. The objective is to transform raw application data into an interactive business intelligence solution that provides insights into app popularity, user engagement, ratings, reviews, installs, pricing, content ratings, and category-level performance.
 
-The project transforms raw application and review data into interactive dashboards that highlight important trends and provide actionable business insights.
+The project focuses on understanding which applications and categories perform strongly, how users engage with applications, and what patterns can be identified from app-level metrics.
 
-The analysis focuses primarily on two areas:
+The final project contains two interactive Power BI dashboards:
 
-1. App Performance & Engagement
-2. Review & Sentiment Analysis
+1. Executive Overview Dashboard
+2. App Performance & Engagement Dashboard
 
----
-
-## Project Objectives
-
-The main objectives of this project are:
-
-- Analyze app performance across different categories.
-- Identify categories with high user engagement.
-- Analyze app ratings and review volumes.
-- Identify the most installed applications.
-- Analyze installs across content-rating groups.
-- Examine app pricing patterns.
-- Understand the distribution of user sentiment.
-- Compare positive, negative, and neutral reviews.
-- Calculate the positive-to-negative review ratio.
-- Build interactive Power BI dashboards for business analysis.
+The project also includes the supporting data, analysis documentation, dashboard screenshots, insights, and project report.
 
 ---
 
-## Dataset
+## Business Objectives
 
-The project uses Google Play Store application data along with user review and sentiment data.
+The main objectives of the analysis are to:
 
-### Google Play Store Apps Dataset
+- Understand the overall performance of applications on the Google Play Store.
+- Analyze application installs and identify highly popular applications.
+- Compare application performance across different categories.
+- Analyze review volumes as an indicator of user engagement.
+- Compare average ratings across categories.
+- Examine the relationship between application popularity and user engagement.
+- Analyze applications based on content-rating groups.
+- Understand the distribution of free and paid applications.
+- Analyze application pricing.
+- Identify the applications with the highest install volumes.
+- Create an interactive dashboard that allows users to explore the data efficiently.
+- Convert raw application data into meaningful business insights.
 
-The application dataset contains information such as:
+---
+
+# Dataset
+
+The project uses Google Play Store application data.
+
+The main application dataset contains information about applications available on the Google Play Store.
+
+### Key Fields
+
+The dataset includes fields such as:
 
 - App
 - Category
@@ -51,205 +57,334 @@ The application dataset contains information such as:
 - Last Updated
 - Android Version
 
-### Google Play Store User Reviews Dataset
-
-The review dataset contains information such as:
-
-- App
-- Sentiment
-- Sentiment Polarity
-- Sentiment Subjectivity
-- Translated Review
+The project also contains a user-review dataset that was explored during the analysis process. However, the final dashboard solution focuses on the application performance and engagement analysis.
 
 ---
 
-## Data Preparation
+# Data Preparation
 
-Before creating the dashboards, the data was prepared and transformed for analysis.
+The raw data required preparation before it could be used effectively in Power BI.
 
-The preparation process included:
+The data preparation process included:
 
-- Checking data quality.
-- Identifying missing values.
-- Checking duplicate records.
+- Checking the dataset structure.
+- Reviewing missing values.
+- Checking for duplicate records.
 - Cleaning numerical fields.
+- Converting fields into appropriate data types.
 - Standardizing categorical values.
-- Converting fields to appropriate data types.
-- Creating install groups.
-- Creating DAX measures.
-- Preparing sentiment-related calculations.
-- Building relationships between the required tables.
+- Preparing install-related fields for analysis.
+- Creating groups for numerical analysis where required.
+- Creating DAX measures for KPI calculations.
+- Preparing fields required for dashboard visualizations.
+- Establishing relationships between relevant tables.
+
+The purpose of the preparation stage was to ensure that the dashboard calculations and visualizations were based on consistent and usable data.
 
 ---
 
-## Tools & Technologies
+# Data Model
 
-- Microsoft Power BI
-- Power Query
-- DAX
-- Microsoft Excel / CSV
-- Data Cleaning
-- Data Transformation
-- Data Modeling
-- Data Visualization
-- Sentiment Analysis
+The Power BI model contains multiple tables used for application analysis.
+
+The primary application table is:
+
+`googleplaystore`
+
+Other supporting tables used during the project include:
+
+- App_Dim
+- GooglePlay_Apps
+- Review_Apps
+- Top 5 Apps
+- Measure
+
+The model was structured to support filtering, calculations, KPI development, and dashboard-level analysis.
 
 ---
 
-# Dashboard 1 – App Performance & Engagement
+# Key Measures
 
-The first dashboard provides an overview of application performance and user engagement.
+Several DAX measures were created to support the analysis.
+
+Examples include:
+
+- Total Apps
+- Unique Apps
+- Average Rating
+- Average Reviews
+- Average Installs
+- Average Price
+- Average Reviews per App
+- Average Installs per App
+- Install-related measures
+- Rating-related measures
+- Category-level calculations
+
+These measures were used throughout the dashboards to provide dynamic results based on the selected filters.
+
+---
+
+# Dashboard 1 – Executive Overview Dashboard
+
+The Executive Overview Dashboard provides a high-level summary of the Google Play Store application dataset.
+
+It is designed to give users an immediate understanding of the overall application ecosystem before moving into more detailed analysis.
+
+### Dashboard Focus
+
+The dashboard focuses on:
+
+- Overall application performance
+- App distribution
+- Installs
+- Reviews
+- Ratings
+- Categories
+- Application characteristics
+- High-level performance indicators
+
+The dashboard is intended to function as the starting point of the analysis and provide a quick executive-level overview.
+
+### Dashboard Preview
+
+![Executive Overview Dashboard](./PowerBI/Dashboard/dashboard1.png)
+
+### Dashboard File
+
+[View Executive Overview Dashboard](./PowerBI/Dashboard/dashboard1.png)
+
+---
+
+# Dashboard 2 – App Performance & Engagement Dashboard
+
+The App Performance & Engagement Dashboard provides a more detailed analysis of application performance and user engagement.
 
 ### Key KPIs
+
+The dashboard includes:
 
 - Average Reviews per App
 - Average Installs per App
 - Average Price
 
+The current dashboard values include:
+
+- Average Reviews per App: approximately 405.94K
+- Average Installs per App: approximately 14.16M
+- Average Price: approximately $1.03
+
 ### Key Visualizations
+
+The dashboard includes:
 
 - Average Reviews by Category
 - Average Rating by Category
 - Top 10 Apps by Installs
 - Average Reviews by Content Rating
 
-### Interactive Analysis
+### Category-Level Analysis
 
-The dashboard allows users to explore application performance and compare different categories and content-rating groups.
+The category analysis highlights differences in review volumes across application categories.
 
-### Dashboard Preview
+Categories such as:
 
-![App Performance & Engagement Dashboard](./PowerBI/Dashboard/Dashboard1.jpg)
+- Social
+- Communication
+- Game
 
-### Open Dashboard
+show particularly high review volumes in the analysis.
 
-[View Dashboard 1](./PowerBI/Dashboard/Dashboard1.jpg)
+### Top Applications
 
----
+The Top 10 Apps by Installs visualization identifies applications with exceptionally high install volumes.
 
-# Dashboard 2 – Review & Sentiment Analysis
+This provides a clear view of applications with strong market adoption.
 
-The second dashboard focuses on user reviews and sentiment patterns.
+### Content Rating Analysis
 
-### Key KPIs
-
-- Total Reviews
-- Positive Review %
-- Negative Review %
-- Neutral Review %
-- Positive-to-Negative Ratio
-
-### Key Metrics
-
-The dashboard provides a high-level view of user sentiment and helps identify the overall balance between positive, negative, and neutral reviews.
-
-The current analysis shows:
-
-- Positive Review: **82.29%**
-- Negative Review: **5.21%**
-- Neutral Review: **11.46%**
-- Positive-to-Negative Ratio: **15.80 : 1**
-
-### Interactive Filters
-
-The dashboard includes slicers for:
-
-- Sentiments
-- Category
-- Type
-
-These filters allow users to interactively explore review and sentiment patterns.
-
-### Dashboard Preview
-
-![Review & Sentiment Analysis Dashboard](./PowerBI/Dashboard/Dashboard2.jpg)
-
-### Open Dashboard
-
-[View Dashboard 2](./PowerBI/Dashboard/Dashboard2.jpg)
+The dashboard also compares average review volumes across content-rating groups, helping identify differences in engagement across audience classifications.
 
 ---
 
 # Key Findings
 
-## App Performance
+## Application Engagement
 
-- The average reviews per app are approximately **405.94K**.
-- The average installs per app are approximately **14.16M**.
-- The average app price is approximately **$1.03**.
-- Social, Communication, and Game categories show particularly high review volumes.
-- A relatively small number of highly popular apps account for a substantial share of installs.
+The analysis indicates substantial differences in user engagement across application categories.
 
-## App Ratings
+Social, Communication, and Game applications demonstrate particularly high review volumes, suggesting strong levels of user activity and interaction within these categories.
 
-- Most categories have relatively high average ratings.
-- Several categories have average ratings around **4.2–4.4**.
-- High review volume does not necessarily mean that a category has the highest average rating.
+Review volume can be considered an important engagement indicator when analyzed together with installs.
 
-## User Sentiment
+---
 
-The sentiment analysis shows a strongly positive distribution within the analyzed review data.
+## Application Installs
 
-- **82.29%** of reviews are positive.
-- **5.21%** of reviews are negative.
-- **11.46%** of reviews are neutral.
-- There are approximately **15.80 positive reviews for every negative review**.
+Application installs are heavily concentrated among a relatively small number of highly popular applications.
 
-This indicates that positive user feedback significantly outweighs negative feedback in the analyzed review dataset.
+The Top 10 Apps by Installs visualization demonstrates the significant difference between market-leading applications and the broader application population.
+
+This indicates that application popularity is not evenly distributed across the Google Play Store ecosystem.
+
+---
+
+## Ratings
+
+Average ratings remain relatively high across many application categories.
+
+Several categories record average ratings in the approximate range of 4.2 to 4.4.
+
+However, a high number of reviews does not necessarily mean that a category has the highest average rating.
+
+This highlights the importance of analyzing both engagement and satisfaction metrics together.
+
+---
+
+## Reviews
+
+The average reviews per application are approximately:
+
+**405.94K**
+
+This indicates a substantial level of user interaction across the applications included in the dataset.
+
+However, review volumes vary significantly between categories and individual applications.
+
+---
+
+## Average Installs
+
+The average installs per application are approximately:
+
+**14.16M**
+
+This provides an overall indication of the scale of application adoption represented within the dataset.
+
+The distribution is influenced heavily by highly popular applications.
+
+---
+
+## Pricing
+
+The average application price is approximately:
+
+**$1.03**
+
+This relatively low average indicates that the analyzed Google Play Store ecosystem contains a large presence of free and low-priced applications.
+
+Pricing therefore needs to be considered alongside installs, category, and application popularity when evaluating application performance.
 
 ---
 
 # Business Insights
 
-### 1. Category Performance
+### 1. Popularity Is Concentrated
 
-Categories with high review volumes indicate strong levels of user engagement and market activity.
+A relatively small number of applications achieve extremely high install volumes.
 
-### 2. User Engagement
+This suggests that the app market is highly competitive and that market adoption is concentrated among leading applications.
 
-Review volume can be used as an indicator of user engagement when considered alongside installs.
+### 2. Category Matters
 
-### 3. App Ratings
+Different categories show substantially different levels of user engagement.
 
-Ratings provide an indication of user satisfaction, but should be evaluated together with review volume and installs.
+Categories with high review volumes can indicate stronger user interaction and larger active user bases.
 
-### 4. Market Leaders
+### 3. Reviews Provide an Engagement Signal
 
-The Top 10 Apps by installs highlight applications with exceptionally high market adoption.
+Applications with large numbers of reviews generally represent applications with substantial user activity.
 
-### 5. Pricing
+However, reviews should be interpreted together with installs because a high review count alone does not provide a complete picture of application performance.
 
-The relatively low average app price suggests that free and low-priced applications play a major role in the analyzed Google Play Store ecosystem.
+### 4. Ratings and Engagement Should Be Analyzed Together
 
-### 6. Customer Sentiment
+An application can have a high rating without having the largest user base.
 
-The high percentage of positive reviews indicates generally favorable user feedback in the analyzed review dataset.
+Similarly, an application can have a large number of reviews without having the highest average rating.
 
-### 7. Negative Feedback
+Therefore, combining ratings, reviews, and installs provides a more complete picture of app performance.
 
-Although negative reviews represent a smaller proportion of the review data, they can provide valuable information about potential areas for product improvement.
+### 5. Free and Low-Priced Applications Dominate
+
+The low average application price suggests that free and low-priced applications represent a major part of the analyzed ecosystem.
+
+This highlights the importance of alternative monetization strategies such as advertising, subscriptions, and in-app purchases when evaluating app business models.
+
+### 6. Market Leaders Have Significant Scale
+
+The Top 10 Apps by Installs demonstrate the significant scale achieved by leading applications.
+
+Studying these applications can help identify characteristics associated with strong market adoption.
 
 ---
 
-# Project Structure
+# Dashboard Interactivity
+
+The dashboards use Power BI's interactive capabilities to allow users to explore the dataset dynamically.
+
+Users can interact with the available filters and visualizations to investigate:
+
+- Categories
+- Application types
+- Ratings
+- Install groups
+- Content-rating groups
+- Application performance
+- User engagement
+
+Interactions between visuals allow users to move from high-level performance indicators to more detailed category and application-level analysis.
+
+---
+
+# Power BI Features Used
+
+The project demonstrates the practical use of:
+
+- Power BI Desktop
+- Power Query
+- Data Transformation
+- Data Modeling
+- DAX
+- Calculated Measures
+- Calculated Columns
+- KPI Cards
+- Bar Charts
+- Column Charts
+- Interactive Slicers
+- Cross-filtering
+- Dashboard Design
+- Data Visualization
+
+---
+
+# Data Analysis Approach
+
+The project followed a structured analytical workflow:
 
 ```text
-Google-Play-Store-PowerBI/
-│
-├── PowerBI/
-│   └── Dashboard/
-│       ├── Dashboard1.jpg
-│       └── Dashboard2.jpg
-│
-├── Data/
-│
-├── Docs/
-│
-├── Insights/
-│   └── insights.md
-│
-├── Report/
-│
-├── .gitignore
-│
-└── README.md
+Raw Dataset
+     |
+     v
+Data Understanding
+     |
+     v
+Data Cleaning
+     |
+     v
+Data Transformation
+     |
+     v
+Data Modeling
+     |
+     v
+DAX Measures
+     |
+     v
+Exploratory Analysis
+     |
+     v
+Dashboard Development
+     |
+     v
+Business Insights
