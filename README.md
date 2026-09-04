@@ -150,11 +150,11 @@ The dashboard is intended to function as the starting point of the analysis and 
 
 ### Dashboard 1 — Executive Overview
 
-![Executive Overview Dashboard](./PowerBI/Dashboard/dashboard1.png)
+![Executive Overview Dashboard](./Dashboard/dashboard1.png)
 
 ### Dashboard 2 — App Performance & Engagement
 
-![App Performance & Engagement Dashboard](./PowerBI/Dashboard/dashboard2.png)
+![App Performance & Engagement Dashboard](./Dashboard/dashboard2.png)
 
 ---
 
