@@ -146,13 +146,15 @@ The dashboard focuses on:
 
 The dashboard is intended to function as the starting point of the analysis and provide a quick executive-level overview.
 
-### Dashboard Preview
+## Power BI Dashboards
+
+### Dashboard 1 — Executive Overview
 
 ![Executive Overview Dashboard](./PowerBI/Dashboard/dashboard1.png)
 
-### Dashboard File
+### Dashboard 2 — App Performance & Engagement
 
-[View Executive Overview Dashboard](./PowerBI/Dashboard/dashboard1.png)
+![App Performance & Engagement Dashboard](./PowerBI/Dashboard/dashboard2.png)
 
 ---
 
@@ -388,3 +390,26 @@ Dashboard Development
      |
      v
 Business Insights
+
+
+# Project Structure
+
+Google-Play-Store-PowerBI/
+│
+├── PowerBI/
+│   └── Dashboard/
+│       ├── dashboard1.png
+│       └── dashboard2.png
+│
+├── Data/
+│
+├── Docs/
+│
+├── Insights/
+│   └── insights.md
+│
+├── Report/
+│
+├── .gitignore
+│
+└── README.md
